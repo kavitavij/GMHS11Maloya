@@ -1,0 +1,42 @@
+<div>
+
+  <div class="middle_container">
+    <h3 style="color: #F65314; padding-left:15px">Principal Desk</h3>
+    <form class="px-4 " wire:submit.prevent="store" enctype="multipart/form-data">
+    <div>
+        @if (session()->has('message'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+          {{ session('message') }}
+        </div>
+        @endif
+      </div>
+      <div class="row gx-3" >
+        <div class="col-lg-3 col-sm-12">
+          <div class="d-flex flex-column">
+            <p class="text mb-1"> Add Heading: </p>
+            <input class="form-control mb-3" wire:model="heading" type="text" />
+          </div>
+        </div>
+        <div class="col-lg-3 col-sm-12">
+          <div class="d-flex flex-column">
+            <p class="text mb-1"> Add Description: </p>
+            <input class="form-control mb-3" wire:model="description" type="text" />
+          </div>
+        </div>
+        <div class="col-lg-3 col-sm-12">
+          <div class="d-flex flex-column">
+            <p class="text mb-1"> Add Image: </p>
+            <input class="form-control mb-3" wire:model="image"  type="file" value="" />
+          </div>
+        </div>
+        <div class="col-lg-3 col-sm-12">
+          <div class="flex-column">
+            <button class="mb-3 bttn" type="submit">
+              Submit
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
